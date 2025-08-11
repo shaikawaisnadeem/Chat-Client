@@ -15,6 +15,7 @@ const DirectMessages = () => {
                 <Contact />
                 <Contact />
                 <Contact />
+                <Contact />
             </div>
         </div>
     )

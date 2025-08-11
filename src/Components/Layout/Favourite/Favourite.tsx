@@ -12,6 +12,7 @@ const Favourite = () => {
             <Contact />
             <Contact />
             <Contact />
+            <Contact />
         </div>
     </div>
   )

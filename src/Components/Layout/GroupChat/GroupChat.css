@@ -1,0 +1,27 @@
+.group-messages-main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 22px;
+}
+.group-msg-navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 22px;
+    width: 100%;
+}
+.group-msg-head{
+    color: #777c81;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px 22px;
+}
+.group-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0px 22px;
+    gap: 12px;
+}

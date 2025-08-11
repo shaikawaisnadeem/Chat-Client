@@ -1,0 +1,12 @@
+.channel-main-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    gap: 18px;
+}
+.channel-head{
+    font-size: 14px;
+    font-weight: 500;
+    color: #495057;
+    cursor: pointer;
+}
