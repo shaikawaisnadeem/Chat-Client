@@ -5,6 +5,7 @@
   justify-content: space-between;
   padding: 22px 0px;
   border-right: 1px solid rgb(221, 219, 219);
+  background-color: #2e2e2e;
 }
 
 .toggle-icons-wrapper, .profile-icons-wrapper {
@@ -18,7 +19,7 @@
 
 .toggle-icons-wrapper svg,
 .profile-icons-wrapper svg {
-  color: #65676b;
+  color: #7d7f81;
   cursor: pointer;
   transition: transform 0.4s ease-in-out, color 0.2s ease-in-out;
 }
