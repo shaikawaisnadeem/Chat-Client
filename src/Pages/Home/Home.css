@@ -1,0 +1,21 @@
+.home-grid-page{
+    display: grid;
+    grid-template-columns: 5% 20% 75%;
+    height: 100vh;
+}
+
+@media screen and (max-width:769px){
+    .home-grid-page{
+        grid-template-columns: 100%;
+    }
+}
+@media screen and (max-width: 769px) {
+  .home-grid-page .icons-wrapper {
+    display: none;
+  }
+}
+@media screen and (max-width: 789px){
+  .home-grid-page .welcome-main-page{
+    display: none;
+  }
+}

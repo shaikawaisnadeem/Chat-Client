@@ -1,0 +1,29 @@
+.direct-messages-main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 22px;
+}
+.direct-msg-head{
+    color: #777c81;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px 22px;
+}
+
+.direct-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0px 22px;
+    gap: 12px;
+}
+
+.direct-msg-navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0px 0px;
+    width: 100%;
+}

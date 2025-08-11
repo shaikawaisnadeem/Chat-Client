@@ -1,0 +1,43 @@
+.icons-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0px;
+  border-right: 1px solid rgb(221, 219, 219);
+}
+
+.toggle-icons-wrapper, .profile-icons-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.toggle-icons-wrapper svg,
+.profile-icons-wrapper svg {
+  color: #65676b;
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out, color 0.2s ease-in-out;
+}
+
+.profile-icons-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.chat-icon:hover,.contact-icon:hover,.call-icon:hover,.bookmark-icon:hover,.settings-icon:hover,
+.theme-icon:hover,.user-icon:hover{
+        transform: scale(1.05);
+        color: rgb(82, 83, 82) !important; 
+}
+
+.home-icon:hover{
+  transform: scale(1.05);
+  color: rgb(44, 132, 44) !important; 
+}

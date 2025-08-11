@@ -1,0 +1,62 @@
+.welcome-main-page{
+    background: url('https://doot-light.react.themesbrand.com/static/media/pattern-05.ffd181cdf9a08b200998.png'),
+    rgb(243, 243, 238);;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.welcome-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+}
+.logo-wrapper-welcome{
+    background-color: #d2e4d8;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+.logo-wrapper-welcome svg{
+    cursor: pointer;
+}
+
+.welcome-head{
+    font-size: 22px;
+    color: #495057;
+}
+.welcome-details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:8px;
+}
+.welcome-para{
+    font-size: 17px;
+    color: #74797e;
+    max-width: 450px;
+    text-align: center;
+}
+
+.get-started-btn{
+    color: white;
+    font-size: 16px;
+    background-color: #4cb26e;
+    padding: 12px 22px;
+    border: none;
+    width: 175px;
+    height: 50px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+
+.get-started-btn:hover{
+    background-color: #6ee094;
+}
