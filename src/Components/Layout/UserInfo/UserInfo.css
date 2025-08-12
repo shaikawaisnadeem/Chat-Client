@@ -1,0 +1,38 @@
+.settings-menu {
+  width: 300px;
+  font-family: Arial, sans-serif;
+  margin-top: 22px;
+}
+
+.menu-item {
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  background-color: white;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  color: #555;
+}
+
+.menu-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.menu-label {
+  flex-grow: 1;
+}
+
+.menu-arrow {
+  font-size: 18px;
+}
+
+.menu-content {
+  padding: 12px;
+  font-size: 14px;
+  color: #777;
+  background-color: #f9f9f9;
+}

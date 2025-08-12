@@ -1,0 +1,35 @@
+.profile-card {
+  width: 300px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;   
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.profile-label {
+  font-size: 14px;
+  color: #555;
+}
+
+.profile-value {
+  font-weight: bold;
+  color: #333;
+}
+
+.profile-edit {
+  color: #2d8a5a;
+  cursor: pointer;
+  background-color: #e8f5ec;
+  padding: 4px;
+  border-radius: 4px;
+}

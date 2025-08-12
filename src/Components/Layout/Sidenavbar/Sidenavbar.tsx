@@ -15,20 +15,25 @@ import type { RootState } from '../../../Store/Store';
 import { setValue } from '../../../Features/SideNavbarSlice';
 import { SiRobotframework } from "react-icons/si";
 import { SiGoogleanalytics } from "react-icons/si";
-
+import { setTheme } from '../../../Features/ThemeSlice';
+import { TiWeatherSunny } from "react-icons/ti";
 
 interface DivType extends HTMLAttributes<HTMLDivElement> {
-  children?: ReactNode; 
+  children?: ReactNode;
 }
 
 const Sidenavbar: React.FC<DivType> = (props) => {
   const dispatch = useDispatch();
   const typedUseSelector: TypedUseSelectorHook<RootState> = useSelector;
   const sideSelectedValue = typedUseSelector((state) => state.sidenavbar.value);
+  const ThemeValue = typedUseSelector((state) => state.theme.value);
+  const toggleTheme = () => {
+    dispatch(setTheme(ThemeValue === 'light' ? 'dark' : 'light'));
+  };
   return (
     <div className='icons-wrapper' {...props}>
       <div className='toggle-icons-wrapper'>
-          <BsChatRightTextFill size={30} color='#2aa152ff' />
+        <BsChatRightTextFill size={30} color='#2aa152ff' />
 
         <NavLink
           to='/'
@@ -67,24 +72,26 @@ const Sidenavbar: React.FC<DivType> = (props) => {
           className={({ isActive }) => (isActive ? 'icon active bookmark-icon' : 'icon bookmark-icon')}
           onClick={() => dispatch(setValue('dashboard'))}
         >
-          <SiGoogleanalytics  size={30} />
+          <SiGoogleanalytics size={30} />
         </NavLink>
 
-        <NavLink
+        {/* <NavLink
           to='/settings'
           className={({ isActive }) => (isActive ? 'icon active settings-icon' : 'icon settings-icon')}
           onClick={() => dispatch(setValue('settings'))}
         >
           <MdSettings size={30} />
-        </NavLink>
+        </NavLink> */}
       </div>
 
       <div className='profile-icons-wrapper'>
-        <HiOutlineMoon size={30} className='theme-icon' />
+        {ThemeValue === 'light' ? <TiWeatherSunny size={40} className='theme-icon' onClick={toggleTheme} /> :
+          <HiOutlineMoon size={40} className='theme-icon' onClick={toggleTheme} />}
+
         <NavLink
-          to='/profile'
+          to='/profile' 
           className={({ isActive }) => (isActive ? 'icon active user-icon' : 'icon user-icon')}
-          onClick={() => dispatch(setValue('profile'))}
+          onClick={() => dispatch(setValue('profile'))}   
         >
           <FaUserLarge size={30} />
         </NavLink>

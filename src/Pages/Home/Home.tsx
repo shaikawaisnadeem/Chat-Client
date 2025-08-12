@@ -6,7 +6,6 @@ import SideNavbarChats from '../../Components/Layout/SideNavbarChats/SideNavbarC
 import WelcomePage from '../../Components/Layout/WelcomePage/WelcomePage';
 import { useDispatch, useSelector, type TypedUseSelectorHook } from 'react-redux';
 import type{ RootState } from '../../Store/Store';
-import Profile from '../Profile/Profile';
 import Assistant from '../Assistant/Assistant';
 import Contact from '../Contact/Contact';
 import CallLog from '../CallLog/CallLog';
@@ -31,12 +30,11 @@ const Home:React.FC<HomeDiv> = (props) => {
     <div {...props} className='home-grid-page'>
         <Sidenavbar />
         {navlink === '/' ? <SideNavbarChats/> : '' }
-        {navlink === 'profile' ? <Profile/> : ''}
         {navlink === 'assistant' ? <Assistant/> : ''} 
         {navlink === 'contact' ? <Contact/> : ''}
         {navlink === 'call-log' ? <CallLog/> : ''}
         {navlink === 'dashboard' ? <Dashboard/> : ''}
-        {navlink === 'settings' ? <Settings/> : ''}
+        {navlink === 'profile' ? <Settings/> : ''}
         <WelcomePage/>
     </div>
   )
