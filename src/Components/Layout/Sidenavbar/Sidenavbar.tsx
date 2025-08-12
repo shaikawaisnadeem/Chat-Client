@@ -9,12 +9,12 @@ import { IoMdCall } from 'react-icons/io';
 import { MdOutlineBookmark } from 'react-icons/md';
 import { MdSettings } from 'react-icons/md';
 import { HiOutlineMoon } from 'react-icons/hi2';
-import { SiRoboflow } from 'react-icons/si';
 import { NavLink } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import type { TypedUseSelectorHook } from 'react-redux';
 import type { RootState } from '../../../Store/Store';
 import { setValue } from '../../../Features/SideNavbarSlice';
+import { SiRobotframework } from "react-icons/si";
 
 interface DivType extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode; 
@@ -43,7 +43,7 @@ const Sidenavbar: React.FC<DivType> = (props) => {
           className={({ isActive }) => (isActive ? 'icon active assistant-icon' : 'icon assistant-icon')}
           onClick={() => dispatch(setValue('assistant'))}
         >
-          <SiRoboflow size={30} />
+          <SiRobotframework size={30} />
         </NavLink>
 
         <NavLink

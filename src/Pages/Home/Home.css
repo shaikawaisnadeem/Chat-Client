@@ -20,3 +20,8 @@
     display: none;
   }
 }
+@media screen and (width: 1024px){
+  .home-grid-page{
+    grid-template-columns: 8% 26% 66%;
+  }
+}

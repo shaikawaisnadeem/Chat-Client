@@ -21,7 +21,6 @@ interface HomeDiv extends HTMLAttributes<HTMLDivElement>{
 const Home:React.FC<HomeDiv> = (props) => {
   const typedUseSelector: TypedUseSelectorHook<RootState> = useSelector;
   const navlink = typedUseSelector((state)=> state.sidenavbar.value);
-  console.log(navlink)
   const dispatch = useDispatch();
   useEffect(() => {
     let pathValue = location.pathname === '/' ? '/' : location.pathname.slice(1);
@@ -33,7 +32,7 @@ const Home:React.FC<HomeDiv> = (props) => {
         <Sidenavbar />
         {navlink === '/' ? <SideNavbarChats/> : '' }
         {navlink === 'profile' ? <Profile/> : ''}
-        {navlink === 'assistant' ? <Assistant/> : ''}
+        {navlink === 'assistant' ? <Assistant/> : ''} 
         {navlink === 'contact' ? <Contact/> : ''}
         {navlink === 'call-log' ? <CallLog/> : ''}
         {navlink === 'bookmark' ? <Bookmark/> : ''}
