@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import type { HTMLAttributes, ReactNode } from 'react';
 import { IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5';
 import { FaGoogle, FaGithub, FaFacebookF } from 'react-icons/fa';
+import { useNavigate } from 'react-router';
+import Cookies from 'js-cookie';
 
 interface DivTypes extends HTMLAttributes<HTMLDivElement> {
     children?: ReactNode;
@@ -10,16 +12,81 @@ interface DivTypes extends HTMLAttributes<HTMLDivElement> {
 
 const Login: React.FC<DivTypes> = (props) => {
     const [showPassword, setShowPassword] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [passwordError, setPasswordError] = useState('');
+    const [loginError, setLoginError] = useState('');
+
+    const navigate = useNavigate();
 
     const togglePasswordVisibility = () => {
         setShowPassword((prev) => !prev);
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        console.log("Login submitted");
+    const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setEmail(e.target.value);
+        if (emailError) setEmailError('');
+        if (loginError) setLoginError('');
     };
 
+    const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setPassword(e.target.value);
+        if (passwordError) setPasswordError('');
+        if (loginError) setLoginError('');
+    };
+
+    const validateInputs = () => {
+        let valid = true;
+        if (!email) {
+            setEmailError('Email is required');
+            valid = false;
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+            setEmailError('Invalid email address');
+            valid = false;
+        }
+        return valid;
+    };
+
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            email,
+            password,
+        }),
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setEmailError('');
+        setPasswordError('');
+        setLoginError('');
+
+        if (!validateInputs()) {
+            return;
+        }
+
+        try {
+            const res = await fetch('http://localhost:3000/api/login', options);
+            const data = await res.json();
+
+            if (!res.ok) {
+                setLoginError(data.message || "Login failed");
+                return;
+            }
+
+            setEmail('');
+            setPassword('');
+            Cookies.set('jwt_token', data.token);
+            navigate("/");
+        } catch (error: any) {
+            setLoginError(error.message || "An unexpected error occurred");
+            console.error(error);
+        }
+    };
 
     return (
         <div className='login-main-div' {...props}>
@@ -36,14 +103,35 @@ const Login: React.FC<DivTypes> = (props) => {
                     <p>Sign in to continue to We Chat.</p>
                 </div>
 
+                {loginError && (
+                    <div
+                        className="login-error-msg"
+                        style={{ color: 'red', marginBottom: '10px' }}
+                        role="alert"
+                    >
+                        {loginError}
+                    </div>
+                )}
+
                 <div className='username-input-div'>
-                    <label htmlFor='usernameId'>Username</label>
+                    <label htmlFor='usernameId'>Email</label>
                     <input
                         placeholder='username@domain.com'
                         id='usernameId'
-                        type='text'
-                        required
+                        type='email'
+                        onChange={handleEmail}
+                        value={email}
+                        aria-describedby="email-error"
                     />
+                    {emailError && (
+                        <div
+                            id="email-error"
+                            style={{ color: 'red', fontSize: '0.9em' }}
+                            role="alert"
+                        >
+                            {emailError}
+                        </div>
+                    )}
                 </div>
 
                 <div className='username-input-div'>
@@ -53,7 +141,9 @@ const Login: React.FC<DivTypes> = (props) => {
                             placeholder='..........'
                             id='passwordId'
                             type={showPassword ? 'text' : 'password'}
-                            required
+                            onChange={handlePassword}
+                            value={password}
+                            aria-describedby="password-error"
                         />
                         {showPassword ? (
                             <IoEyeOffOutline onClick={togglePasswordVisibility} />
@@ -61,6 +151,15 @@ const Login: React.FC<DivTypes> = (props) => {
                             <IoEyeOutline onClick={togglePasswordVisibility} />
                         )}
                     </div>
+                    {passwordError && (
+                        <div
+                            id="password-error"
+                            style={{ color: 'red', fontSize: '0.9em' }}
+                            role="alert"
+                        >
+                            {passwordError}
+                        </div>
+                    )}
                 </div>
 
                 <button type='submit' className='login-button'>
@@ -72,29 +171,20 @@ const Login: React.FC<DivTypes> = (props) => {
                 </div>
 
                 <div className='social-login'>
-                    <button
-                        type='button'
-                        className='social-btn google'
-                    >
+                    <button type='button' className='social-btn google'>
                         <FaGoogle /> Google
                     </button>
-                    <button
-                        type='button'
-                        className='social-btn github'
-                    >
+                    <button type='button' className='social-btn github'>
                         <FaGithub /> GitHub
                     </button>
-                    <button
-                        type='button'
-                        className='social-btn facebook'
-                    >
+                    <button type='button' className='social-btn facebook'>
                         <FaFacebookF /> Facebook
                     </button>
                 </div>
 
                 <div className='register-link'>
                     <span>Don’t have an account?</span>
-                    <a href='/register'> Register</a>
+                    <a onClick={() => navigate('/sign-up')}> Register</a>
                 </div>
             </form>
         </div>

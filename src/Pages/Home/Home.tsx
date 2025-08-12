@@ -34,7 +34,7 @@ const Home:React.FC<HomeDiv> = (props) => {
         {navlink === 'contact' ? <Contact/> : ''}
         {navlink === 'call-log' ? <CallLog/> : ''}
         {navlink === 'dashboard' ? <Dashboard/> : ''}
-        {navlink === 'profile' ? <Settings/> : ''}
+        {navlink === 'settings' ? <Settings/> : ''}
         <WelcomePage/>
     </div>
   )

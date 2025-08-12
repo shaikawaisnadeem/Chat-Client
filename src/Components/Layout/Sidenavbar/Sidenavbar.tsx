@@ -89,9 +89,9 @@ const Sidenavbar: React.FC<DivType> = (props) => {
           <HiOutlineMoon size={40} className='theme-icon' onClick={toggleTheme} />}
 
         <NavLink
-          to='/profile' 
+          to='/settings' 
           className={({ isActive }) => (isActive ? 'icon active user-icon' : 'icon user-icon')}
-          onClick={() => dispatch(setValue('profile'))}   
+          onClick={() => dispatch(setValue('settings'))}   
         >
           <FaUserLarge size={30} />
         </NavLink>
