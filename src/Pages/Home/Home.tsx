@@ -10,10 +10,10 @@ import Profile from '../Profile/Profile';
 import Assistant from '../Assistant/Assistant';
 import Contact from '../Contact/Contact';
 import CallLog from '../CallLog/CallLog';
-import Bookmark from '../Bookmark/Bookmark';
 import Settings from '../Settings/Settings';
 import { useEffect } from 'react';
 import { setValue } from '../../Features/SideNavbarSlice';
+import Dashboard from '../Dashboard/Dashboard';
 interface HomeDiv extends HTMLAttributes<HTMLDivElement>{
     children?: ReactNode
 }
@@ -35,7 +35,7 @@ const Home:React.FC<HomeDiv> = (props) => {
         {navlink === 'assistant' ? <Assistant/> : ''} 
         {navlink === 'contact' ? <Contact/> : ''}
         {navlink === 'call-log' ? <CallLog/> : ''}
-        {navlink === 'bookmark' ? <Bookmark/> : ''}
+        {navlink === 'dashboard' ? <Dashboard/> : ''}
         {navlink === 'settings' ? <Settings/> : ''}
         <WelcomePage/>
     </div>

@@ -6,7 +6,6 @@ import { FaUserLarge } from 'react-icons/fa6';
 import { IoMdChatboxes } from 'react-icons/io';
 import { BiSolidUserDetail } from 'react-icons/bi';
 import { IoMdCall } from 'react-icons/io';
-import { MdOutlineBookmark } from 'react-icons/md';
 import { MdSettings } from 'react-icons/md';
 import { HiOutlineMoon } from 'react-icons/hi2';
 import { NavLink } from 'react-router';
@@ -15,6 +14,8 @@ import type { TypedUseSelectorHook } from 'react-redux';
 import type { RootState } from '../../../Store/Store';
 import { setValue } from '../../../Features/SideNavbarSlice';
 import { SiRobotframework } from "react-icons/si";
+import { SiGoogleanalytics } from "react-icons/si";
+
 
 interface DivType extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode; 
@@ -63,11 +64,11 @@ const Sidenavbar: React.FC<DivType> = (props) => {
         </NavLink>
 
         <NavLink
-          to='/bookmark'
+          to='/dashboard'
           className={({ isActive }) => (isActive ? 'icon active bookmark-icon' : 'icon bookmark-icon')}
-          onClick={() => dispatch(setValue('bookmark'))}
+          onClick={() => dispatch(setValue('dashboard'))}
         >
-          <MdOutlineBookmark size={30} />
+          <SiGoogleanalytics  size={30} />
         </NavLink>
 
         <NavLink
