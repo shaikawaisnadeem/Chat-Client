@@ -1,4 +1,5 @@
 import IncomingCall from '../../Components/Common/IncomingCall/IncomingCall';
+import OutgoingCall from '../../Components/Common/OutgoingCall/OutgoingCall';
 import './CallLog.css';
 import React from 'react'
 
@@ -10,8 +11,11 @@ const CallLog = () => {
       </div>
       <div className='calls-recent-div'>
         <IncomingCall/>
+        <OutgoingCall/>
         <IncomingCall/>
+        <OutgoingCall/>
         <IncomingCall/>
+        <OutgoingCall/>
       </div>
     </div>
   )

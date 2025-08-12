@@ -1,0 +1,41 @@
+.profile-wrapper-call{
+    display: flex;
+}
+.contact-name{
+    font-size: 16px !important;
+    font-weight: 500;
+}
+.contact-wrapper-call{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+.contact-list-div{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+}
+.icon-wrapper-three{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+
+}
+.icon-wrapper-three svg{
+    cursor: pointer;
+}
+.icon-wrapper-three svg:hover{
+    color: #10903c !important;
+}
+.contact-profile-wrapper{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #b2aaaa;
+    border-radius: 50%;
+}

@@ -5,7 +5,7 @@ import { BsChatRightTextFill } from 'react-icons/bs';
 import { FaUserLarge } from 'react-icons/fa6';
 import { IoMdChatboxes } from 'react-icons/io';
 import { BiSolidUserDetail } from 'react-icons/bi';
-import { IoMdCall } from 'react-icons/io';
+import { MdPhoneInTalk } from "react-icons/md";
 import { MdSettings } from 'react-icons/md';
 import { HiOutlineMoon } from 'react-icons/hi2';
 import { NavLink } from 'react-router';
@@ -25,7 +25,6 @@ const Sidenavbar: React.FC<DivType> = (props) => {
   const dispatch = useDispatch();
   const typedUseSelector: TypedUseSelectorHook<RootState> = useSelector;
   const sideSelectedValue = typedUseSelector((state) => state.sidenavbar.value);
-
   return (
     <div className='icons-wrapper' {...props}>
       <div className='toggle-icons-wrapper'>
@@ -58,9 +57,9 @@ const Sidenavbar: React.FC<DivType> = (props) => {
         <NavLink
           to='/call-log'
           className={({ isActive }) => (isActive ? 'icon active call-icon' : 'icon call-icon')}
-          onClick={() => dispatch(setValue('call'))}
+          onClick={() => dispatch(setValue('call-log'))}
         >
-          <IoMdCall size={30} />
+          <MdPhoneInTalk size={30} />
         </NavLink>
 
         <NavLink
