@@ -1,10 +1,9 @@
-.chats-section {
+ .chats-section {
     display: flex;
     align-items: center;
     flex-direction: column;
     border-right: 1px solid rgb(221, 219, 219);
-    justify-content: center;
-    overflow-y: hidden;
+    justify-content: center;  
 }
 
 .main-head {
@@ -64,36 +63,21 @@
 .recent-text {
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     width: 100%;
     scrollbar-width: none;
-    overflow-y: auto;
+    overflow-y: auto !important; 
     margin: auto;
-    padding-top: 120px !important;
     padding-bottom: 60px;
     scroll-behavior: smooth;
 }
-@media screen and (max-width: 1024px) {
-  .recent-text {
-    padding-top: 0px !important; 
-  }
-}
 
-@media screen and (max-width: 769px) {
-  .recent-text {
-    padding-top: 180px !important; 
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .recent-text {
-    padding-top: 170px !important; 
-  }
-}
-
-@media screen and (max-width: 376px) {
-  .recent-text {
-    padding-top: 170px !important; 
-  }
+.home-nav-fixed{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: sticky;
+  left: 0;
 }

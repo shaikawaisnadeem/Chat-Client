@@ -6,6 +6,7 @@
   padding: 22px 0px;
   border-right: 1px solid rgb(221, 219, 219);
   background-color: #2e2e2e;
+  height: 100vh;
 }
 
 .toggle-icons-wrapper, .profile-icons-wrapper {
@@ -33,7 +34,7 @@
 }
 
 .chat-icon:hover,.contact-icon:hover,.call-icon:hover,.bookmark-icon:hover,.settings-icon:hover,
-.theme-icon:hover,.user-icon:hover{
+.theme-icon:hover,.user-icon:hover,.assistant-icon:hover{
         transform: scale(1.05);
         color: rgb(82, 83, 82) !important; 
 }
@@ -41,4 +42,27 @@
 .home-icon:hover{
   transform: scale(1.05);
   color: rgb(44, 132, 44) !important; 
+}
+.icon.active {
+  color: #2aa152 !important;
+  padding:0 6px;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  border-right: 1px solid #2aa152;
+}
+
+.icon svg {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon.active svg {
+  color: #2aa152 !important;
+}
+
+.icon:not(.active):hover svg {
+  /* transform: scale(1.05); */
+  color: rgb(82, 83, 82);
+}
+
+.home-icon:hover:not(.active) svg {
+  color: rgb(44, 132, 44);
 }

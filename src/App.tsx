@@ -1,11 +1,11 @@
 import Home from "./Pages/Home/Home"
-
+import { BrowserRouter } from "react-router"
 function App() {
 
   return (
-    <>
-    <Home/>
-    </>
+    <BrowserRouter>
+      <Home/>
+    </BrowserRouter>
   )
 }
 

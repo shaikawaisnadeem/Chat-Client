@@ -8,6 +8,7 @@ import GroupChat from '../GroupChat/GroupChat';
 const SideNavbarChats = () => {
     return (
         <div className='chats-section'>
+            <div className='home-nav-fixed'>
             <div className='main-head'>
                 <h1>Chats</h1>
                 <AddBtn />
@@ -18,6 +19,7 @@ const SideNavbarChats = () => {
                     placeholder='Search here...' 
                     className='input-search-bar' 
                 />
+            </div>
             </div>
             <div className='recent-text'>
                 <Favourite />

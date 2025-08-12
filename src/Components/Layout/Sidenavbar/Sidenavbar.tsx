@@ -1,33 +1,96 @@
 import './Sidenavbar.css';
 import React from 'react';
-import { BsChatRightTextFill } from "react-icons/bs";
-import { FaUserLarge } from "react-icons/fa6";
-import { IoMdChatboxes } from "react-icons/io";
-import { BiSolidUserDetail } from "react-icons/bi";
-import { IoMdCall } from "react-icons/io";
-import { MdOutlineBookmark } from "react-icons/md";
-import { MdSettings } from "react-icons/md";
-import { HiOutlineMoon } from "react-icons/hi2";
+import type { HTMLAttributes, ReactNode } from 'react';
+import { BsChatRightTextFill } from 'react-icons/bs';
+import { FaUserLarge } from 'react-icons/fa6';
+import { IoMdChatboxes } from 'react-icons/io';
+import { BiSolidUserDetail } from 'react-icons/bi';
+import { IoMdCall } from 'react-icons/io';
+import { MdOutlineBookmark } from 'react-icons/md';
+import { MdSettings } from 'react-icons/md';
+import { HiOutlineMoon } from 'react-icons/hi2';
+import { SiRoboflow } from 'react-icons/si';
+import { NavLink } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import type { TypedUseSelectorHook } from 'react-redux';
+import type { RootState } from '../../../Store/Store';
+import { setValue } from '../../../Features/SideNavbarSlice';
 
-
-const Sidenavbar = () => {
-  return (
-    <div className='icons-wrapper'>
-        <div className='toggle-icons-wrapper'>
-          <BsChatRightTextFill className='home-icon' size={30} color='#2aa152ff' />
-          <IoMdChatboxes size={30} className='chat-icon'/>
-          <BiSolidUserDetail size={30} className='contact-icon'/>
-          <IoMdCall size={30} className='call-icon'/>
-          <MdOutlineBookmark size={30} className='bookmark-icon'/>
-          <MdSettings size={30} className='settings-icon'/>
-        </div>
-        <div className='profile-icons-wrapper'>
-          <HiOutlineMoon size={30} className='theme-icon'/>
-          <FaUserLarge size={30} className='user-icon'/>
-          
-        </div>
-    </div>
-  )
+interface DivType extends HTMLAttributes<HTMLDivElement> {
+  children?: ReactNode; 
 }
 
-export default Sidenavbar
+const Sidenavbar: React.FC<DivType> = (props) => {
+  const dispatch = useDispatch();
+  const typedUseSelector: TypedUseSelectorHook<RootState> = useSelector;
+  const sideSelectedValue = typedUseSelector((state) => state.sidenavbar.value);
+
+  return (
+    <div className='icons-wrapper' {...props}>
+      <div className='toggle-icons-wrapper'>
+          <BsChatRightTextFill size={30} color='#2aa152ff' />
+
+        <NavLink
+          to='/'
+          className={({ isActive }) => (isActive ? 'icon active chat-icon' : 'icon chat-icon')}
+          onClick={() => dispatch(setValue('/'))}
+        >
+          <IoMdChatboxes size={30} />
+        </NavLink>
+
+        <NavLink
+          to='/assistant'
+          className={({ isActive }) => (isActive ? 'icon active assistant-icon' : 'icon assistant-icon')}
+          onClick={() => dispatch(setValue('assistant'))}
+        >
+          <SiRoboflow size={30} />
+        </NavLink>
+
+        <NavLink
+          to='/contact'
+          className={({ isActive }) => (isActive ? 'icon active contact-icon' : 'icon contact-icon')}
+          onClick={() => dispatch(setValue('contact'))}
+        >
+          <BiSolidUserDetail size={30} />
+        </NavLink>
+
+        <NavLink
+          to='/call-log'
+          className={({ isActive }) => (isActive ? 'icon active call-icon' : 'icon call-icon')}
+          onClick={() => dispatch(setValue('call'))}
+        >
+          <IoMdCall size={30} />
+        </NavLink>
+
+        <NavLink
+          to='/bookmark'
+          className={({ isActive }) => (isActive ? 'icon active bookmark-icon' : 'icon bookmark-icon')}
+          onClick={() => dispatch(setValue('bookmark'))}
+        >
+          <MdOutlineBookmark size={30} />
+        </NavLink>
+
+        <NavLink
+          to='/settings'
+          className={({ isActive }) => (isActive ? 'icon active settings-icon' : 'icon settings-icon')}
+          onClick={() => dispatch(setValue('settings'))}
+        >
+          <MdSettings size={30} />
+        </NavLink>
+      </div>
+
+      <div className='profile-icons-wrapper'>
+        <HiOutlineMoon size={30} className='theme-icon' />
+        <NavLink
+          to='/profile'
+          className={({ isActive }) => (isActive ? 'icon active user-icon' : 'icon user-icon')}
+          onClick={() => dispatch(setValue('profile'))}
+        >
+          <FaUserLarge size={30} />
+        </NavLink>
+      </div>
+    </div>
+  );
+};
+
+export default Sidenavbar;
