@@ -45,7 +45,12 @@ const Settings = () => {
           </select>
         </div>
       </div>
+      <div className='user-info-div'>
       <UserInfo/>
+      </div>
+      <div className='logout-div'>
+          <button className='logout-btn'>Logout</button>
+      </div>
     </div>
   )
 }

@@ -1,0 +1,225 @@
+.login-main-div {
+    background: #4eac6d;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-overlay-div {
+    position: absolute;
+    top: 70%;
+    left: 40%;
+    translate: -50% -50%;
+}
+
+.image-overlay-div img {
+    height: 70%;
+    width: 70%;
+}
+
+/* Form box */
+.login-page-form {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+/* Welcome text */
+.welcome-back-login-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.welcome-back-login-div h1 {
+    color: #495057;
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.welcome-back-login-div p {
+    color: #777c81;
+    font-size: 15px;
+    font-weight: 300;
+    font-family: Roboto, sans-serif;
+    margin-top: 0.5rem;
+}
+
+/* Input groups */
+.username-input-div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.username-input-div label {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 0.4rem;
+}
+
+.username-input-div input {
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease;
+}
+
+.username-input-div input:focus {
+    outline: none;
+    border-color: #4eac6d;
+    box-shadow: 0 0 0 3px rgba(78, 172, 109, 0.2);
+}
+
+.password-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input input {
+    flex: 1;
+}
+.password-input input::placeholder{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.password-input svg {
+    position: absolute;
+    right: 10px;
+    color: #888;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.password-input svg:hover {
+    color: #4eac6d;
+}
+
+
+.login-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #4eac6d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.login-button:hover {
+    background-color: #3d8f59;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem 0;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.divider:not(:empty)::before {
+    margin-right: 0.75em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: 0.75em;
+}
+
+
+.social-login {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    color: white;
+}
+
+.social-btn svg {
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.google {
+    background-color: #db4437;
+    cursor: pointer !important;
+}
+.google:hover {
+    background-color: #b9362c;
+}
+
+.github {
+    background-color: #333;
+    cursor: pointer;
+}
+.github:hover {
+    background-color: #222;
+}
+
+.facebook {
+    background-color: #1877f2;
+    cursor: pointer;
+}
+.facebook:hover {
+    background-color: #145dbf;
+}
+.register-link {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.register-link a {
+    color: #4eac6d;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 0.25rem;
+    cursor: pointer;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

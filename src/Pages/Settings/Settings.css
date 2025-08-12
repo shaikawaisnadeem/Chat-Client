@@ -102,3 +102,29 @@
     outline: none;
     border: none;
 }
+.user-info-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.logout-div{
+    display: flex;
+    /* justify-content: center; */
+    margin-left: 22px;
+    align-items: center;
+    margin-top: 25px;
+}
+.logout-btn{
+    padding: 8px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: rgb(233, 60, 60);
+    color: white;
+    font-size: 15px;
+    transition: background-color 0.4s ease;
+}
+.logout-btn:hover{
+    background-color: rgb(222, 25, 25);
+}
