@@ -1,0 +1,28 @@
+.calls-main-div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-right: 1px solid rgb(221, 219, 219);
+    /* justify-content: center;   */
+}
+.calls-head-div{
+     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px;
+    width: 100%;
+}
+
+.calls-head-div h1{
+  font-size: 28px;
+    font-weight: 600;
+    color: #495057;
+}
+
+.calls-recent-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}

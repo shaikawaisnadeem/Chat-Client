@@ -3,7 +3,7 @@
     align-items: center;
     flex-direction: column;
     border-right: 1px solid rgb(221, 219, 219);
-    justify-content: center;  
+    /* justify-content: center;      */
 }
 
 .main-head {
