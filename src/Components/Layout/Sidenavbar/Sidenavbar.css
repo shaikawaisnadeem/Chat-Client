@@ -54,6 +54,7 @@
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   border-right: 1px solid #2aa152;
 }
+
 @media screen and (max-width: 769px) {
   .icon.active{
     /* padding: 0 4px; */
