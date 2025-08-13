@@ -8,7 +8,12 @@
   background-color: #2e2e2e;
   height: 100vh;
 }
-
+@media screen and (max-width: 789px){
+  .home-grid-page .icons-wrapper {
+    height: 10vh !important;
+    width: 100vw;
+  }
+}
 .toggle-icons-wrapper, .profile-icons-wrapper {
   display: flex;
   flex-direction: column;
@@ -49,7 +54,12 @@
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   border-right: 1px solid #2aa152;
 }
-
+@media screen and (max-width: 769px) {
+  .icon.active{
+    /* padding: 0 4px; */
+    border-right: none !important;
+  }
+}
 .icon svg {
   transition: color 0.3s ease, transform 0.3s ease;
 }
