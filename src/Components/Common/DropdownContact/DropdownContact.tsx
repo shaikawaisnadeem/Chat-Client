@@ -1,5 +1,4 @@
 import './DropdownContact.css';
-import React from 'react'
 import { MdOutlineEdit } from "react-icons/md";
 import { MdOutlineDelete } from "react-icons/md";
 import { MdOutlineBlock } from "react-icons/md";

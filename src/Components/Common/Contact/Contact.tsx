@@ -1,5 +1,4 @@
 import './Contact.css';
-import React from 'react'
 import { FaUser } from "react-icons/fa6";
 
 export const Contact = () => {

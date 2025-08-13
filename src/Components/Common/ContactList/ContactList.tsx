@@ -1,5 +1,5 @@
 import './ContactList.css';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BiUser } from "react-icons/bi";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { IoClose } from "react-icons/io5"; 
@@ -11,7 +11,6 @@ const ContactList = () => {
     const toggleDropdown = () => {
         setDropContact(prev => !prev);
     };
-    console.log(dropContact)
 
     return (
         <div className='contact-list-div'>

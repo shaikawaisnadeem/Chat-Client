@@ -1,5 +1,4 @@
 import './SideNavbarChats.css';
-import React from 'react';
 import Favourite from '../Favourite/Favourite';
 import AddBtn from '../../Common/AddBtn/AddBtn';
 import DirectMessages from '../DirectMessages/DirectMessages';

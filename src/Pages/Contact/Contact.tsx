@@ -1,7 +1,6 @@
 import AddBtn from '../../Components/Common/AddBtn/AddBtn';
 import ContactList from '../../Components/Common/ContactList/ContactList';
 import './Contact.css';
-import React from 'react'
 
 const Contact = () => {
   return (

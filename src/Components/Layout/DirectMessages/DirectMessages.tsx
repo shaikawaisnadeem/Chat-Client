@@ -1,7 +1,6 @@
 import AddBtn from '../../Common/AddBtn/AddBtn'
 import { Contact } from '../../Common/Contact/Contact'
 import './DirectMessages.css'
-import React from 'react'
 
 const DirectMessages = () => {
     return (

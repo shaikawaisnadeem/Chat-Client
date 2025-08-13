@@ -1,5 +1,4 @@
 import './ChannelTag.css';
-import React from 'react';
 import { TbHash } from "react-icons/tb";
 
 

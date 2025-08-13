@@ -1,5 +1,4 @@
 import './IncomingCall.css';
-import React from 'react'
 import { BiUser } from "react-icons/bi";
 import { MdPhoneInTalk } from "react-icons/md";
 

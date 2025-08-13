@@ -1,7 +1,6 @@
 import IncomingCall from '../../Components/Common/IncomingCall/IncomingCall';
 import OutgoingCall from '../../Components/Common/OutgoingCall/OutgoingCall';
 import './CallLog.css';
-import React from 'react'
 
 const CallLog = () => {
   return (

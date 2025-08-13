@@ -6,7 +6,6 @@ import { FaUserLarge } from 'react-icons/fa6';
 import { IoMdChatboxes } from 'react-icons/io';
 import { BiSolidUserDetail } from 'react-icons/bi';
 import { MdPhoneInTalk } from "react-icons/md";
-import { MdSettings } from 'react-icons/md';
 import { HiOutlineMoon } from 'react-icons/hi2';
 import { NavLink } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,7 +24,7 @@ interface DivType extends HTMLAttributes<HTMLDivElement> {
 const Sidenavbar: React.FC<DivType> = (props) => {
   const dispatch = useDispatch();
   const typedUseSelector: TypedUseSelectorHook<RootState> = useSelector;
-  const sideSelectedValue = typedUseSelector((state) => state.sidenavbar.value);
+  // const sideSelectedValue = typedUseSelector((state) => state.sidenavbar.value);
   const ThemeValue = typedUseSelector((state) => state.theme.value);
   const toggleTheme = () => {
     dispatch(setTheme(ThemeValue === 'light' ? 'dark' : 'light'));

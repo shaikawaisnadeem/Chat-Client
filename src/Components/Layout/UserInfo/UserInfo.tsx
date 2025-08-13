@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import { TbColorSwatch } from "react-icons/tb";
 import { MdOutlinePrivacyTip } from "react-icons/md";
-import { RiShieldKeyholeLine } from "react-icons/ri";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import "./UserInfo.css";

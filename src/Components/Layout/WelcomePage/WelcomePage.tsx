@@ -1,5 +1,4 @@
-import './WelcomePage.css';
-import React from 'react';
+import './WelcomePage.css'
 import { BsChatRightTextFill } from "react-icons/bs";
 
 const WelcomePage = () => {
@@ -10,7 +9,7 @@ const WelcomePage = () => {
                     <BsChatRightTextFill className='home-icon' size={50} color='#2aa152ff' />
                 </div>
                 <div className='welcome-details'>
-                    <h1 className='welcome-head'>Welcome to Real Chat App</h1>
+                    <h1 className='welcome-head'>Welcome to We Chat</h1>
                     <p className='welcome-para'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. cum sociis natoque penatibus et</p>
                     <button className='get-started-btn'>Get Started</button>
 

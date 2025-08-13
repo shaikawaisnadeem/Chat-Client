@@ -1,0 +1,35 @@
+.user-analysis {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.analysis-head {
+  color: #7c7777;
+  font-weight: 500;
+  font-size: 32px;
+  padding: 12px 22px;
+  flex: 0 0 auto;
+}
+
+.chats-grid-div {
+  flex: 1 1 auto;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  padding: 20px;
+  flex-direction: column;
+  gap: 22px;
+}
+.line-graph {
+  width: 100%;         
+  max-width: 700px;  
+  height: 300px;      
+  margin: 0 auto;
+}
+.bar-graph {
+  width: 100%;         
+  max-width: 900px;  
+  height: 250px;      
+  margin: 0 auto;
+}

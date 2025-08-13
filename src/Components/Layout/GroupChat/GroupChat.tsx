@@ -1,5 +1,4 @@
 import './GroupChat.css';
-import React from 'react';
 import AddBtn from '../../Common/AddBtn/AddBtn';
 import ChannelTag from '../../Common/ChannelTag/ChannelTag';
 

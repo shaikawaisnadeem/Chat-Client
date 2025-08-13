@@ -1,6 +1,4 @@
 import './Favourite.css';
-import React from 'react';
-import { FaUser } from "react-icons/fa6";
 import { Contact } from '../../Common/Contact/Contact';
 
 const Favourite = () => {

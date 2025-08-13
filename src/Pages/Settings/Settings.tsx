@@ -1,5 +1,4 @@
 import './Settings.css';
-import React from 'react'
 import { MdEdit } from "react-icons/md";
 import { AiOutlineUser } from "react-icons/ai";
 import { MdPhotoCamera } from "react-icons/md";

@@ -1,6 +1,5 @@
 import AssistantIcon from '../../Components/Common/Assistant/AssistantIcon';
 import './Assistant.css';
-import React from 'react';
 import { TbSend } from "react-icons/tb";
 
 const Assistant = () => {
