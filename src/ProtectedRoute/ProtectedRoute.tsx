@@ -6,9 +6,9 @@ interface ProtectedRouteProps {
 }
 const ProtectedRoute:React.FC<ProtectedRouteProps> = ({children}) => {
     const jwtToken = Cookies.get("jwt_token")
-    if (!jwtToken){
+    if (jwtToken){
         return children;
     }
-    return <Navigate to='/'/>
+    return <Navigate to='/sign-up'/>
 }
 export default ProtectedRoute
