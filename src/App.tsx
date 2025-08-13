@@ -8,19 +8,18 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import Settings from "./Pages/Settings/Settings";
 import SideNavbarChats from "./Components/Layout/SideNavbarChats/SideNavbarChats";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />}>
-          {/* nested routes */}
-          <Route index element={<SideNavbarChats />} />
-          <Route path="assistant" element={<Assistant />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="call-log" element={<CallLog />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="settings" element={<Settings />} />
+        <Route path='/' element={<ProtectedRoute><Home /></ProtectedRoute>}>
+          <Route index element={<ProtectedRoute><SideNavbarChats /></ProtectedRoute>} />
+          <Route path="assistant" element={<ProtectedRoute><Assistant /></ProtectedRoute>} />
+          <Route path="contact" element={<ProtectedRoute><Contact /></ProtectedRoute>} />
+          <Route path="call-log" element={<ProtectedRoute><CallLog /></ProtectedRoute>} />
+          <Route path="dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
         </Route>
 
         <Route path="/sign-in" element={<Login />} />
