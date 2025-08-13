@@ -1,13 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import sidenavbarReducer from "../Features/SideNavbarSlice";
 import ActiveStatusReducers from '../Features/ActiveSlice';
-import ThemeSliceReducers from '../Features/ThemeSlice'
+import ThemeSliceReducers from '../Features/ThemeSlice';
+import DropDownReducers from '../Features/ToggleDropdown';
 
 export const Store = configureStore({
     reducer: {
         sidenavbar: sidenavbarReducer,
         activestatus:ActiveStatusReducers,
-        theme: ThemeSliceReducers
+        theme: ThemeSliceReducers,
+        dropdown: DropDownReducers
     }
 });
 

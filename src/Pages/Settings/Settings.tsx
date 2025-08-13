@@ -9,11 +9,15 @@ import type { TypedUseSelectorHook } from 'react-redux';
 import type { RootState } from '../../Store/Store';
 import { setActive } from '../../Features/ActiveSlice';
 import UserInfo from '../../Components/Layout/UserInfo/UserInfo';
+import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router';
 
 const Settings = () => {
   const dispatch = useDispatch();
   const typeUseSelector: TypedUseSelectorHook<RootState> = useSelector;
   const activeStatus = typeUseSelector((state) => state.activestatus.value);
+  const token = Cookies.get('jwt_token');
+  const navi = useNavigate();
   return (
     <div className='settings-main-div'>
       <div className='settings-edit-div'>
@@ -46,10 +50,23 @@ const Settings = () => {
         </div>
       </div>
       <div className='user-info-div'>
-      <UserInfo/>
+        <UserInfo />
       </div>
       <div className='logout-div'>
-          <button className='logout-btn'>Logout</button>
+        <button
+          className='logout-btn'
+          onClick={() => {
+            if (token) {
+              Cookies.remove('jwt_token');
+              navi('/sign-in');
+            } else {
+              navi('/sign-in');
+            }
+          }}
+        >
+          {token ? 'Logout' : 'Login'}
+        </button>
+
       </div>
     </div>
   )
