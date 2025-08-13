@@ -9,6 +9,6 @@ const ProtectedRoute:React.FC<ProtectedRouteProps> = ({children}) => {
     if (jwtToken){
         return children;
     }
-    return <Navigate to='/log-in'/>
+    return <Navigate to='/sign-in'/>
 }
 export default ProtectedRoute
