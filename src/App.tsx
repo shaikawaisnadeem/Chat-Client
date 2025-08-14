@@ -12,7 +12,7 @@ import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 function App() {
   return (
     <BrowserRouter>
-      {/* <Routes>
+      <Routes>
         <Route path='/' element={<ProtectedRoute><Home /></ProtectedRoute>}>
           <Route index element={<ProtectedRoute><SideNavbarChats /></ProtectedRoute>} />
           <Route path="assistant" element={<ProtectedRoute><Assistant /></ProtectedRoute>} />
@@ -24,8 +24,8 @@ function App() {
 
         <Route path="/sign-in" element={<Login />} />
         <Route path="/sign-up" element={<Signup />} />
-      </Routes> */}
-      <Routes>
+      </Routes>
+      {/* <Routes>
         <Route path='/' element={<Home />}>
           <Route index element={<SideNavbarChats />} />
           <Route path="assistant" element={<Assistant />} />
@@ -37,7 +37,7 @@ function App() {
 
         <Route path="/sign-in" element={<Login />} />
         <Route path="/sign-up" element={<Signup />} />
-      </Routes>
+      </Routes> */}
     </BrowserRouter>
   );
 }

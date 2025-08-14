@@ -1,9 +1,8 @@
- .chats-section {
+.chats-section {
     display: flex;
     align-items: center;
     flex-direction: column;
     border-right: 1px solid rgb(221, 219, 219);
-    /* justify-content: center;      */
 }
 
 .main-head {
@@ -63,22 +62,44 @@
 
 .recent-text {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     width: 100%;
-    scrollbar-width: none;
-    overflow-y: auto !important; 
-    margin: auto;
+    
+    /* Scrollable area */
+    overflow-y: auto;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #ccc transparent;
+    
     padding-bottom: 60px;
+    margin: 0;
     scroll-behavior: smooth;
+
+    /* Make sure sticky header stays visible */
+    max-height: calc(100vh - 130px); /* adjust header height if needed */
 }
 
-.home-nav-fixed{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  position: sticky;
-  left: 0;
+/* Scrollbar styling for WebKit browsers */
+.recent-text::-webkit-scrollbar {
+    width: 6px;
+}
+.recent-text::-webkit-scrollbar-track {
+    background: transparent;
+}
+.recent-text::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.home-nav-fixed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 2;
 }

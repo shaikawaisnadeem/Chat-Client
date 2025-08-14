@@ -1,29 +1,59 @@
-.calls-main-div{
+.calls-main-div {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh; /* full viewport height */
     border-right: 1px solid rgb(221, 219, 219);
-    /* justify-content: center;   */
+    background: #fafafa;
 }
-.calls-head-div{
-     display: flex;
+
+.calls-head-div {
+    display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 18px 22px;
     width: 100%;
+    position: sticky; /* keep header visible */
+    top: 0;
+    background: #fff;
+    z-index: 2;
+    border-bottom: 1px solid #e8e5e5;
 }
 
-.calls-head-div h1{
-  font-size: 28px;
+.calls-head-div h1 {
+    font-size: 28px;
     font-weight: 600;
     color: #495057;
 }
 
-.calls-recent-div{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  width: 100%;
+.calls-recent-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 8px 22px;
+
+    /* make scrollable */
+    overflow-y: auto;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #ccc transparent;
+
+    max-height: calc(100vh - 74px); /* subtract header height, adjust if needed */
+    scroll-behavior: smooth;
+}
+
+/* WebKit scrollbar for Chrome/Safari */
+.calls-recent-div::-webkit-scrollbar {
+    width: 6px;
+}
+
+.calls-recent-div::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.calls-recent-div::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
 }

@@ -12,6 +12,7 @@ const CallLog = () => {
         <IncomingCall/>
         <OutgoingCall/>
         <IncomingCall/>
+        <IncomingCall/>
         <OutgoingCall/>
         <IncomingCall/>
         <OutgoingCall/>
