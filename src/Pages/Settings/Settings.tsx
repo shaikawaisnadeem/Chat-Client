@@ -10,13 +10,26 @@ import { setActive } from '../../Features/ActiveSlice';
 import UserInfo from '../../Components/Layout/UserInfo/UserInfo';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router';
+import {jwtDecode} from 'jwt-decode'; 
+
+interface MyTokenPayload {
+  username: string;
+  email: string;
+  exp?: number;
+  iat?: number;
+}
 
 const Settings = () => {
   const dispatch = useDispatch();
   const typeUseSelector: TypedUseSelectorHook<RootState> = useSelector;
   const activeStatus = typeUseSelector((state) => state.activestatus.value);
+
   const token = Cookies.get('jwt_token');
+  const decodedToken: MyTokenPayload | null = token ? jwtDecode<MyTokenPayload>(token) : null;
+  console.log(decodedToken);
+
   const navi = useNavigate();
+
   return (
     <div className='settings-main-div'>
       <div className='settings-edit-div'>
@@ -33,10 +46,17 @@ const Settings = () => {
           </div>
         </div>
       </div>
+
       <div className='user-info'>
-        <h1>Mangapathi Justice</h1>
+        <h1>{decodedToken?.username || 'Guest'}</h1> 
         <div className='user-active-status'>
-          <GoDotFill size={20} color={activeStatus === 'active' ? '#06d6a0' : activeStatus === 'away' ? '#ffd166' : '#ef476f'} />
+          <GoDotFill 
+            size={20} 
+            color={
+              activeStatus === 'active' ? '#06d6a0' :
+              activeStatus === 'away' ? '#ffd166' : '#ef476f'
+            } 
+          />
           <select
             value={activeStatus}
             className='select-dropdown'
@@ -48,27 +68,24 @@ const Settings = () => {
           </select>
         </div>
       </div>
+
       <div className='user-info-div'>
         <UserInfo />
       </div>
+
       <div className='logout-div'>
         <button
           className='logout-btn'
           onClick={() => {
-            if (token) {
-              Cookies.remove('jwt_token');
-              navi('/sign-in');
-            } else {
-              navi('/sign-in');
-            }
+            if (token) Cookies.remove('jwt_token');
+            navi('/sign-in');
           }}
         >
           {token ? 'Logout' : 'Login'}
         </button>
-
       </div>
     </div>
   )
 }
 
-export default Settings
+export default Settings;
