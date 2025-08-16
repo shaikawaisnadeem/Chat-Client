@@ -12,20 +12,8 @@ import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 function App() {
   return (
     <BrowserRouter>
+      
       <Routes>
-        <Route path='/' element={<ProtectedRoute><Home /></ProtectedRoute>}>
-          <Route index element={<ProtectedRoute><SideNavbarChats /></ProtectedRoute>} />
-          <Route path="assistant" element={<ProtectedRoute><Assistant /></ProtectedRoute>} />
-          <Route path="contact" element={<ProtectedRoute><Contact /></ProtectedRoute>} />
-          <Route path="call-log" element={<ProtectedRoute><CallLog /></ProtectedRoute>} />
-          <Route path="dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-          <Route path="settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
-        </Route>
-
-        <Route path="/sign-in" element={<Login />} />
-        <Route path="/sign-up" element={<Signup />} />
-      </Routes>
-      {/* <Routes>
         <Route path='/' element={<Home />}>
           <Route index element={<SideNavbarChats />} />
           <Route path="assistant" element={<Assistant />} />
@@ -37,7 +25,7 @@ function App() {
 
         <Route path="/sign-in" element={<Login />} />
         <Route path="/sign-up" element={<Signup />} />
-      </Routes> */}
+      </Routes> 
     </BrowserRouter>
   );
 }
